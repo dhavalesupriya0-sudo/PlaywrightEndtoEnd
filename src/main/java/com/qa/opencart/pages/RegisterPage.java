@@ -48,10 +48,10 @@ public class RegisterPage {
 			page.check(agreePrivacyPolicy);
 			page.click(continuebtn);
 			
-			
+		page.pause();	
 		}
-		public String getEmailAlreadyExistsWarning() {
-			return page.locator(warningMessage).textContent().trim();
+		public boolean getEmailAlreadyExistsWarning() {
+			return page.isVisible(warningMessage);
 		}
 		
 //		public boolean getConfirmationText() {
