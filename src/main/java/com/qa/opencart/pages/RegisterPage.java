@@ -60,7 +60,7 @@ public class RegisterPage {
 //				page.click(acceptcongMessage);
 //			}return false;
 //		}
-		
+/*		
 		public boolean getMyAccountTitle() {
 			String MyAcctit = page.title();
 			System.out.println("Account registered and Title: "+MyAcctit);
@@ -71,4 +71,5 @@ public class RegisterPage {
 			}
 			return false;
 	}
+*/
 }

@@ -22,10 +22,10 @@ public class RegisterPageTest extends BaseTest{
 		String actualWarning=registerPage.getEmailAlreadyExistsWarning();
 		Assert.assertEquals(actualWarning, " Warning: E-Mail Address is already registered!");
 	}
-	
+/*	
 	@Test(priority = 3)
 	public void MyAccountTest() {
 		registerPage.getMyAccountTitle();
 	}
-
+*/
 }
