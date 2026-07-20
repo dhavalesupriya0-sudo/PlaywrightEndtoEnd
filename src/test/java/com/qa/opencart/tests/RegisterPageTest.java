@@ -18,7 +18,9 @@ public class RegisterPageTest extends BaseTest{
 	
 	@Test(priority = 2)
 	public void appRegisterTest() {
-		registerPage.doRegister("Priya", "T", "auiod0@gmail.com", "1234567890", "admin@123", "admin@123");
+		registerPage.doRegister("Priya", "T", "dhavalesupriya0@gmail.com", "1234567890", "admin@123", "admin@123");
+		String actualWarning=registerPage.getEmailAlreadyExistsWarning();
+		Assert.assertEquals(actualWarning, " Warning: E-Mail Address is already registered!");
 	}
 	
 	@Test(priority = 3)

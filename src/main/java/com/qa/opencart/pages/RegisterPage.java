@@ -1,5 +1,7 @@
 package com.qa.opencart.pages;
 
+import static org.testng.Assert.assertEquals;
+
 import com.microsoft.playwright.Page;
 
 public class RegisterPage {
@@ -18,6 +20,7 @@ public class RegisterPage {
 		private String continuebtn="//input[@value='Continue']";
 		private String acceptcongMessage="//a[normalize-space()='Continue']";
 		private String MyAccountText="//h2[normalize-space()=\"My Account\"]";
+		private String warningMessage="div.alert.alert-danger";
 		
 	//2. Registerpage constructor
 		public RegisterPage(Page page) {
@@ -46,6 +49,9 @@ public class RegisterPage {
 			page.click(continuebtn);
 			
 			
+		}
+		public String getEmailAlreadyExistsWarning() {
+			return page.locator(warningMessage).textContent().trim();
 		}
 		
 //		public boolean getConfirmationText() {
