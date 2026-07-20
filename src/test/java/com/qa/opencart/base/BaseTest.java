@@ -2,8 +2,9 @@ package com.qa.opencart.base;
 
 import java.util.Properties;
 
-
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 
@@ -22,7 +23,7 @@ public class BaseTest {
 	protected LoginPage loginPage;
 	protected RegisterPage  registerPage;
 	
-	@BeforeMethod(alwaysRun = true)
+	@BeforeClass()
 	public void setup() {
 		System.out.println("=========SETUP STARTED========");
 		pf=new PlaywrightFactory();
@@ -34,7 +35,7 @@ public class BaseTest {
 		System.out.println("HomePage = "+homePage);
 	}
 	
-	@AfterTest
+	@AfterClass
 	public void tearDown() {
 		page.context().browser().close();
 	}
