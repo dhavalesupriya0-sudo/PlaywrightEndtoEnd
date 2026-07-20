@@ -48,7 +48,6 @@ public class RegisterPage {
 			page.check(agreePrivacyPolicy);
 			page.click(continuebtn);
 			
-		page.pause();	
 		}
 		public boolean getEmailAlreadyExistsWarning() {
 			return page.isVisible(warningMessage);
