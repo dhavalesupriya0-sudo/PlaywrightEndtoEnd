@@ -18,9 +18,9 @@ public class RegisterPage {
 		private String yesRadiobtn="//label[normalize-space()=\"Yes\"]";
 		private String agreePrivacyPolicy="//input[@name='agree']";
 		private String continuebtn="//input[@value='Continue']";
-		private String acceptcongMessage="//a[normalize-space()='Continue']";
-		private String MyAccountText="//h2[normalize-space()=\"My Account\"]";
-		private String warningMessage="div.alert.alert-danger";
+//		private String acceptcongMessage="//a[normalize-space()='Continue']";
+//		private String MyAccountText="//h2[normalize-space()=\"My Account\"]";
+		private String warningMessage="//div[contains(@class,'alert-danger')]";
 		
 	//2. Registerpage constructor
 		public RegisterPage(Page page) {
