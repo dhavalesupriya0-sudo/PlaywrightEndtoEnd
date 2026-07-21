@@ -3,7 +3,7 @@ pipeline
 	agent any
 	
 	tools	{
-		maven 'TestMaven'
+		maven "maven"
 		}
 
 	stages
@@ -33,19 +33,19 @@ pipeline
 			}
 		}
 
-		stage("regression automation Test")
+		stage("Regression Automation Test")
 		{
 			steps
 			{
 				catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE')
 				{
 					git 'https://github.com/dhavalesupriya0-sudo/PlaywrightEndtoEnd'
-					sh "mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testrunners/testng_regressions.xml"
+					sh "mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testrunners/testng_regression.xml"
 				}
 			}
 		}
 
-		stage("Publish Extent report")
+		stage("Publish Extent Report")
 		{
 			steps
 			{
