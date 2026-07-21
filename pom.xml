@@ -63,10 +63,22 @@
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.13.0</version>
         </plugin>
+        
+        
         <plugin>
           <artifactId>maven-surefire-plugin</artifactId>
           <version>3.3.0</version>
+          <configuration>
+          	<forkCount>3</forkCount>
+          	<reuseForks></reuseForks>
+          	<argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>
+          	<suiteXmlFiles>
+          		<suiteXmlFile>src/test/resources/testrunners/testng_regressions.xml</suiteXmlFile>
+          		<!---<suiteXmlFile>${suiteXmlFile}</suiteXmlFile>-->
+          	</suiteXmlFiles>
+          </configuration>
         </plugin>
+        
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
           <version>3.4.2</version>
@@ -88,6 +100,10 @@
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>3.6.1</version>
         </plugin>
+        
+        
+        
+        
       </plugins>
     </pluginManagement>
   </build>
