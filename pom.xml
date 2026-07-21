@@ -47,21 +47,26 @@
 
 
   <build>
-    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+ <!--   <pluginManagement> lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) 
       <plugins>
-        <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
+         clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle 
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>
           <version>3.4.0</version>
         </plugin>
-        <!-- default lifecycle, jar packaging: see https://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging -->
+         default lifecycle, jar packaging: see https://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging 
         <plugin>
           <artifactId>maven-resources-plugin</artifactId>
           <version>3.3.1</version>
-        </plugin>
+        </plugin>-->
+        <plugins>
         <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.13.0</version>
+          <configuration>
+          	<source>21</source>
+          	<target>21</target>
+          </configuration>
         </plugin>
         
         
@@ -70,7 +75,7 @@
           <version>3.3.0</version>
           <configuration>
           	<forkCount>3</forkCount>
-          	<reuseForks></reuseForks>
+          	<reuseForks>true</reuseForks>
           	<argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>
           	<suiteXmlFiles>
           		<suiteXmlFile>src/test/resources/testrunners/testng_regressions.xml</suiteXmlFile>
@@ -79,7 +84,7 @@
           </configuration>
         </plugin>
         
-        <plugin>
+        <!--<plugin>
           <artifactId>maven-jar-plugin</artifactId>
           <version>3.4.2</version>
         </plugin>
@@ -91,7 +96,7 @@
           <artifactId>maven-deploy-plugin</artifactId>
           <version>3.1.2</version>
         </plugin>
-        <!-- site lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#site_Lifecycle -->
+         site lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#site_Lifecycle 
         <plugin>
           <artifactId>maven-site-plugin</artifactId>
           <version>3.12.1</version>
@@ -100,11 +105,11 @@
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>3.6.1</version>
         </plugin>
-        
+        -->
         
         
         
       </plugins>
-    </pluginManagement>
+ <!--  </pluginManagement> -->   
   </build>
 </project>
